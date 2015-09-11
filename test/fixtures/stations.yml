@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  bike_stands: 1
+  last_update: 1
+
+two:
+  name: MyString
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  bike_stands: 1
+  last_update: 1

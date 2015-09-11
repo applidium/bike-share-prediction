@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weather: MyString
+  temperature: 1.5
+  wind_speed: 1.5
+  humidity: 1
+  contract_id: 
+
+two:
+  weather: MyString
+  temperature: 1.5
+  wind_speed: 1.5
+  humidity: 1
+  contract_id: 

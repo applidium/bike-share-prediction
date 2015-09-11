@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  station_id: 
+  datetime: 2015-08-07 16:10:06
+  available_bikes: 1
+
+two:
+  station_id: 
+  datetime: 2015-08-07 16:10:06
+  available_bikes: 1

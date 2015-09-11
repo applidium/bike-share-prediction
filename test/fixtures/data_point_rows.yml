@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open: false
+  weather: 1
+  temperature: 9.99
+  wind_speed: 9.99
+  humidity: 1
+  hour: 1
+  minute: 1
+  day_of_week: 1
+  week_number: 1
+  season: 1
+  weekend: false
+  holiday: false
+  available_bikes: 1
+  station_id: 
+  type: 
+
+two:
+  open: false
+  weather: 1
+  temperature: 9.99
+  wind_speed: 9.99
+  humidity: 1
+  hour: 1
+  minute: 1
+  day_of_week: 1
+  week_number: 1
+  season: 1
+  weekend: false
+  holiday: false
+  available_bikes: 1
+  station_id: 
+  type: 
