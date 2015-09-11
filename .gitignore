@@ -16,3 +16,4 @@
 */venv
 
 config/api_keys.yml
+config/database.yml
