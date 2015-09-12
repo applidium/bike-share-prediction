@@ -6,6 +6,10 @@ any bikeshare system, especially any of the
 [JCDecaux](https://developer.jcdecaux.com/#/opendata/vls?page=static) system in
 a minute.
 
+An example instance of the Webservice is running on Heroku, you can access it
+here: [http://bike-share-prediction-example.herokuapp.com](http://bike-share-prediction-example.herokuapp.com).
+It contains stations of the Vélib' contract, but does not make any prediction.
+
 ## Installation
 
 * Get API key from [JCDecaux Developer](https://developer.jcdecaux.com/#/account)
@@ -25,6 +29,32 @@ a minute.
 * `bundle exec rake fetch:populate` will create Vélib' contract, you can add other systems here if you want to
 * `bundle exec rails server`
 * Enjoy.
+
+Alternatively, you can set API keys as environment variables, suffixed with `\_APIKEY`:
+
+  $ export JCDECAUX_APIKEY=xxxx
+  $ export OPENWEATHERMAP_APIKEY=xxxx
+  $ export FORECASTIO_APIKEY=xxxx
+  $ bundle exec rails server
+
+### Prediction backend
+
+This repository comes packaged with a scikit-learn-based prediction backend,
+to get it to run, you will need a [Redis](http://redis.io) server running on
+port 6379, if it is running on another port, please change it in
+[`prediction/worker.py`](https://github.com/applidium/bike-share-prediction/blob/master/prediction/worker.py#L41)
+and [`lib/tasks/predict.rake`](https://github.com/applidium/bike-share-prediction/blob/master/lib/tasks/predict.rake#L9).
+
+Once Redis is running, run `prediction/worker.py` (install requirements located
+in `prediction/requirements.txt` before, works well with Python virtualenv).
+
+The worker will subscribe to a Redis Pub/Sub channel. Once a day, Rails will
+publish metadata asking to predict usage for the next day, the Python worker
+will treat these metadata and predict using scikit-learn's `linear_model.Lasso`
+and `linear_model.Ridge` algorithms.
+
+You can add another prediction backend and turn the Python worker off if you
+have your own implementation of a prediction algorithm.
 
 ## Routes
 
